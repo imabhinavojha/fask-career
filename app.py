@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
+
 JOBS=[
   {
     "id":1,
@@ -21,13 +22,36 @@ JOBS=[
   },
 ]
 
-@app.route("/")
-def hello_world():
-  return render_template('homeUsingBootstrap.html',jobs=JOBS,company_name="NS")
+  
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/skills')
+def skills():
+    return render_template('skills.html')
+
+@app.route('/work')
+def work():
+    return render_template('work.html')
+
+@app.route('/contact')
+def contact():
+  return render_template('contact.html')
+
 
 @app.route("/home1")
-def about():
+def about1():
     return render_template('home.html')
-  
+
+@app.route("/home2")
+def about2():
+  return render_template('homeUsingBootstrap.html',jobs=JOBS,company_name="NS")
+
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=8080, debug=True)
