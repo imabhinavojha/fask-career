@@ -9,6 +9,7 @@ packages = [{include = "repl_nix_fask_career"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^3.0.2"
+flask-bootstrap = "^3.3.7.1"
 
 
 [build-system]
